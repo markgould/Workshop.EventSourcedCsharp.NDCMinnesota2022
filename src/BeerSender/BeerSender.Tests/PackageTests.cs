@@ -12,7 +12,7 @@ public class PackageTests : BeerSenderTestBase
         Given();
 
         When(
-            new CreatePackage(packageId)
+            new CreatePackage.Command(packageId)
             );
 
         Expect(
@@ -29,7 +29,7 @@ public class PackageTests : BeerSenderTestBase
 
         var label = new ShippingLabel("abc123", Carrier.DHL);
         When(
-            new AddShippingLabel(packageId, label)
+            new AddShippingLabel.Command(packageId, label)
         );
 
         Expect(
@@ -46,7 +46,7 @@ public class PackageTests : BeerSenderTestBase
 
         var label = new ShippingLabel(string.Empty, Carrier.DHL);
         When(
-            new AddShippingLabel(packageId, label)
+            new AddShippingLabel.Command(packageId, label)
         );
 
         Expect(

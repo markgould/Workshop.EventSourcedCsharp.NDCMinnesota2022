@@ -1,6 +1,4 @@
-﻿using BeerSender.Domain.Core;
-
-namespace BeerSender.Domain.Package;
+﻿namespace BeerSender.Domain.Package;
 
 public class BeerPackage 
 {
@@ -14,13 +12,13 @@ public class BeerPackage
             case PackageCreated packageCreated:
                 Created(packageCreated);
                 return;
-            case AddShippingLabel shippingLabelAdded:
+            case ShippingLabelAdded shippingLabelAdded:
                 LabelAdded(shippingLabelAdded);
                 return;
         }
     }
 
-    private void LabelAdded(AddShippingLabel @event)
+    private void LabelAdded(ShippingLabelAdded @event)
     {
         _shippingLabel = @event.Label;
     }
