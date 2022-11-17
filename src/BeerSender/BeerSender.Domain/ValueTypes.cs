@@ -12,7 +12,9 @@ public enum Carrier
 {
     UPS,
     FedEx,
-    DHL
+    DHL,
+    USPS,
+    AmazonAir
 }
 
 public record BeerBottle(string Brewery, string Name);

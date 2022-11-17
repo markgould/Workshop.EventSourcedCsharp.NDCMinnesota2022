@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerSender.Domain", "BeerSe
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerSender.Console", "BeerSender.Console\BeerSender.Console.csproj", "{C1123FAF-082A-4953-AEA8-E277B7688778}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BeerSender.Tests", "BeerSender.Tests\BeerSender.Tests.csproj", "{8E05D6CD-1AA1-4064-A6FE-4DE44F53A73A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{C1123FAF-082A-4953-AEA8-E277B7688778}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C1123FAF-082A-4953-AEA8-E277B7688778}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C1123FAF-082A-4953-AEA8-E277B7688778}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8E05D6CD-1AA1-4064-A6FE-4DE44F53A73A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8E05D6CD-1AA1-4064-A6FE-4DE44F53A73A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8E05D6CD-1AA1-4064-A6FE-4DE44F53A73A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8E05D6CD-1AA1-4064-A6FE-4DE44F53A73A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
