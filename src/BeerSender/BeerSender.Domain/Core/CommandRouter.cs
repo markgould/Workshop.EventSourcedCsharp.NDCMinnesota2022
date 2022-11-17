@@ -1,4 +1,6 @@
-﻿namespace BeerSender.Domain;
+﻿using BeerSender.Domain.Package;
+
+namespace BeerSender.Domain.Core;
 
 public class CommandRouter
 {
@@ -29,10 +31,22 @@ public class CommandRouter
                     aggregate.Apply(@event);
                 }
 
-                if (aggregate is IHandleCommand<T> handler)
-                    foreach (var @event in handler.Handle(command))
-                        _publishEvent(@event);
+                var handler = FindHandler(command);
+                foreach (var @event in handler.Handle(command))
+                    _publishEvent(@event);
                 break;
         }
+    }
+
+    private static IHandle<T> FindHandler<T>(T command) where T : ICommand
+    {
+        var type = AppDomain.CurrentDomain.GetAssemblies()
+            .SelectMany(x => x.GetTypes())
+            .FirstOrDefault(x => typeof(IHandle<T>).IsAssignableFrom(x) && !x.IsInterface && !x.IsAbstract);
+
+        if (type == null)
+            throw new Exception($"Handler not found for type {command.GetType()}");
+        var handler = Activator.CreateInstance(type) as IHandle<T>;
+        return handler;
     }
 }

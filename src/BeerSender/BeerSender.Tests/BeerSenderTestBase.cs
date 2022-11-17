@@ -1,4 +1,4 @@
-using BeerSender.Domain;
+using BeerSender.Domain.Core;
 using FluentAssertions;
 
 namespace BeerSender.Tests

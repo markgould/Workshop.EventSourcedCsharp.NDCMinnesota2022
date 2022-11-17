@@ -1,8 +1,6 @@
-﻿namespace BeerSender.Domain;
+﻿using BeerSender.Domain.Core;
 
-public interface ICommand
-{
-}
+namespace BeerSender.Domain.Package;
 
 public interface IPackageCommand : ICommand
 {

@@ -1,4 +1,4 @@
-﻿namespace BeerSender.Domain;
+﻿namespace BeerSender.Domain.Package;
 
 public record ShippingLabel(string ShippingCode, Carrier Carrier)
 {

@@ -1,4 +1,4 @@
-﻿using BeerSender.Domain;
+﻿using BeerSender.Domain.Package;
 
 namespace BeerSender.Tests;
 
