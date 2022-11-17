@@ -1,9 +1,15 @@
 ﻿namespace BeerSender.Domain.Package;
 
-public class BeerPackage 
+public class BeerPackage
 {
+    private const int Capacity = 10;
+
     private Guid _packageId;
     private ShippingLabel _shippingLabel;
+    private List<BeerBottle> _bottles = new();
+
+    public int RemainingCapacity => Capacity - _bottles.Count;
+
 
     public void Apply(object @event)
     {
